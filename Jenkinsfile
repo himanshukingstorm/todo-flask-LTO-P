@@ -11,7 +11,7 @@ pipeline  {
                             }
                          }
                     steps {
-                      sh 'echo "Test Success"'
+                      sh 'echo "Test Success from Feature"'
                           }
                   }
 //    stage('Build') {
