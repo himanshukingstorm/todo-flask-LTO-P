@@ -7,7 +7,7 @@ pipeline  {
                       anyOf {
                         branch 'feature/*'
 //                         branch 'develop'
-                        branch 'main'
+                        branch 'master'
                             }
                          }
                     steps {
