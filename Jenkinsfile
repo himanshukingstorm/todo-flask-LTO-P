@@ -2,18 +2,18 @@ pipeline  {
   agent any
     
   stages    {
-//     stage('Test') {
-//                     when {
-//                       anyOf {
-//                         branch 'feature/*'
-// //                         branch 'develop'
-//                         branch 'main'
-//                             }
-//                          }
-//                     steps {
-//                       sh 'echo "Test Success"'
-//                           }
-//                   }
+    stage('Test') {
+                    when {
+                      anyOf {
+                        branch 'feature/*'
+//                         branch 'develop'
+                        branch 'main'
+                            }
+                         }
+                    steps {
+                      sh 'echo "Test Success"'
+                          }
+                  }
 //    stage('Build') {
 //                   when {
 //                     anyOf {
