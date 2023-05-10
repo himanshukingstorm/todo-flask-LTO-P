@@ -103,7 +103,7 @@ pipeline  {
     stage('Deploy') {
 //                     when {
 //                       anyOf {
-                        branch "*"
+                        branch "master"
 //                             }
 //                           }
                     steps {
