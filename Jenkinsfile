@@ -38,7 +38,7 @@ pipeline  {
     stage ('Update Manifest'){      
            steps {
                 sh "echo $BUILD_ID"
-//                 sh  "sed -i "s/version1/$1/g" todo_app_deployment.yml"
+             sh  "sed -i "s/version1/${BUILD_ID}/g" todo_app_deployment.yml"
 
 
 // sh "sed -i 's|image: himanshukingstorm/todo-app-py:v\$BUILD_ID|image: himanshukingstorm/todo-app-py:v\${env.BUILD_ID}|' todo_app_deployment.yml"
