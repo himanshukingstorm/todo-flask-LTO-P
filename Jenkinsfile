@@ -103,11 +103,12 @@ pipeline  {
     stage('Deploy') {
                     when {
 //                       anyOf {
-                        branch 'main'
+                        branch "master"
 //                             }
                           }
                     steps {
-                            sh 'echo "This is Deploy"'
+                      sh 'echo "This is Deployment"'
+
 //                         withCredentials([file(credentialsId: 'pp', variable: 'my_var')]) {
 //                           script{
 //                             sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
