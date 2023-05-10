@@ -100,13 +100,14 @@ pipeline  {
 //            }
         //    }
            
-//     stage('Deploy') {
-//                     when {
+    stage('Deploy') {
+                    when {
 //                       anyOf {
-//                         branch 'main'
+                        branch 'main'
 //                             }
-//                           }
-//                     steps {
+                          }
+                    steps {
+                            sh 'echo "This is Deploy"'
 //                         withCredentials([file(credentialsId: 'pp', variable: 'my_var')]) {
 //                           script{
 //                             sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
@@ -116,7 +117,7 @@ pipeline  {
 //                   //           sh "echo 'Project running on: $SERVICE_URL'"        
 //                   //           sh "kubectl --kubeconfig=$my_var expose deployment finalproject --type=LoadBalancer --port=8000"          
 //                                                                                           }
-//                           }  
-                    // }    
+                          }  
+                    }    
             }
        }
