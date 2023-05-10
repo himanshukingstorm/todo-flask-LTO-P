@@ -101,11 +101,11 @@ pipeline  {
         //    }
            
     stage('Deploy') {
-                    when {
+//                     when {
 //                       anyOf {
-                        branch "master"
+                        branch "*"
 //                             }
-                          }
+//                           }
                     steps {
                       sh 'echo "This is Deployment"'
 
