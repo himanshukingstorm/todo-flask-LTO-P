@@ -55,7 +55,7 @@ pipeline  {
                         withCredentials([file(credentialsId: 'pp', variable: 'my_var')]) {
                           script{
                             sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
-                            sh 'kubectl --kubeconfig=$my_var set image deployment/todo-app todo-app=himanshukingstorm/todo-app-py:v$BUILD_ID'
+//                             sh 'kubectl --kubeconfig=$my_var set image deployment/todo-app todo-app=himanshukingstorm/todo-app-py:v$BUILD_ID'
                                 }
                                                                                           }
                           }  
