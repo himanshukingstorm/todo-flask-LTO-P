@@ -5,9 +5,10 @@ pipeline  {
     stage('Test') {
                     when {
                       anyOf { 
+                        branch 'master'
                         branch 'feature/*'
 //                         branch 'develop'
-                        branch 'master'
+                        
                             }
                          }
                     steps {
