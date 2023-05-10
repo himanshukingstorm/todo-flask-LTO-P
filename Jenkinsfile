@@ -3,14 +3,14 @@ pipeline  {
     
   stages    {
     stage('Test') {
-                    when {
-                      anyOf { 
-                        branch 'master'
-                        branch 'feature/*'
-//                         branch 'develop'
+//                     when {
+//                       anyOf { 
+//                         branch 'master'
+//                         branch 'feature/*'
+// //                         branch 'develop'
                         
-                            }
-                         }
+//                             }
+//                          }
                     steps {
                       sh 'echo "Test Success from Feature"'
                           }
