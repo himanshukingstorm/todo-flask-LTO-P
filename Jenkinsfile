@@ -48,8 +48,9 @@ pipeline  {
                     steps {
                          withCredentials([file(credentialsId: 'pp', variable: 'my_var')]) {
                           script{
-                            sh "envsubst < todo_app_deployment.yml | kubectl apply -f -"
-//                             sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
+                            sh "envsubst < todo_app_deployment.yml" 
+//                             sh "kubectl apply -f -"
+                            sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
                             sh 'echo "Deployment is Successful"'
                                 }
                                                                                           }
