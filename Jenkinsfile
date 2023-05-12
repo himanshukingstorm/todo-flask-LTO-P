@@ -11,7 +11,7 @@ pipeline  {
                   }
    stage('Build') {
                      steps {
-                        sh 'docker build -t todo-app-py-flask:v.$BUILD_ID .'
+                        sh 'docker build -t todo-app-py:v.$BUILD_ID .'
                         echo "This is Build Based on Docker Image version v.$BUILD_ID"
                         echo "Build Success"
                            }
@@ -27,8 +27,8 @@ pipeline  {
     
     stage('Push into Dockerhub') {
                     steps {
-                      sh "docker tag todo-app-py-flask:v.$BUILD_ID himanshukingstorm/todo-app-py-flask:v.$BUILD_ID"
-                      sh "docker push himanshukingstorm/todo-app-py-flask:v.$BUILD_ID"
+                      sh "docker tag todo-app-py:v.$BUILD_ID himanshukingstorm/todo-app-py:v.$BUILD_ID"
+                      sh "docker push himanshukingstorm/todo-app-py:v.$BUILD_ID"
 
                         echo "This Push is Based on Docker Image as Version :v.$BUILD_ID"
                         echo "Pushed with Success into Dockerhub"
