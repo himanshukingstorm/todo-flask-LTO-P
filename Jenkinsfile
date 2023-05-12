@@ -37,8 +37,9 @@ pipeline  {
     
     stage ('Update Manifest'){      
            steps {
-             sh "echo $BUILD_ID"
-             sh "sed -i 's/version/${BUILD_ID}/g' todo_app_deployment.yml"
+//              sh "echo $BUILD_ID"
+//              sh "sed -i 's/version/${BUILD_ID}/g' todo_app_deployment.yml"
+             
              echo "YAML File Updated with current Build"
                  }
                              }
@@ -47,7 +48,8 @@ pipeline  {
                     steps {
                          withCredentials([file(credentialsId: 'pp', variable: 'my_var')]) {
                           script{
-                            sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
+                            sh "envsubst < todo_app_deployment.yml | kubectl apply -f -"
+//                             sh "kubectl --kubeconfig=$my_var apply -f todo_app_deployment.yml"
                             sh 'echo "Deployment is Successful"'
                                 }
                                                                                           }
